@@ -1,8 +1,3 @@
-# Formula1-Racing-Data-Analysis
-Built a scalable data pipeline and conducted in-depth analysis using Azure Databricks, Delta Lake, Azure Data Factory and Power BI. 
-
-
-
 # 🚀 Formula 1 Data Analysis with Azure Databricks 🏎️
 
 Welcome to my GitHub repository where I showcase a comprehensive data analysis project using Azure Databricks! This project dives into Formula 1 racing data, leveraging powerful tools and techniques to extract insights and create impactful visualizations.
@@ -34,10 +29,9 @@ This project involves analyzing Formula 1 racing data using various Azure servic
 To get started with the notebooks in this repository, follow these steps:
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/f1-data-analysis.git
-   cd f1-data-analysis
-   ```
+   - Generate a GitHub token.
+   - Link the token with your Databricks account.
+   - Create a GitHub folder in Databricks and commit directly from Databricks.
 
 2. **Set Up Azure Databricks**
    - Create an Azure Databricks workspace.
@@ -46,22 +40,6 @@ To get started with the notebooks in this repository, follow these steps:
 3. **Run the Notebooks**
    - Open the notebooks in your Databricks workspace.
    - Follow the step-by-step instructions provided in the notebooks.
-
-## Project Structure
-The repository is organized as follows:
-
-```plaintext
-f1-data-analysis/
-├── data/
-│   └── (Data files used in the project)
-├── notebooks/
-│   ├── 01_Data_Ingestion.ipynb
-│   ├── 02_Data_Transformation.ipynb
-│   ├── 03_Data_Analysis.ipynb
-│   └── 04_Data_Visualization.ipynb
-├── README.md
-└── LICENSE
-```
 
 ## The Process
 1. **Data Ingestion**: Data is ingested from the Ergast API, which provides a rich dataset on Formula 1 races, drivers, circuits, and more. This data is stored in Azure Data Lake Storage Gen2.

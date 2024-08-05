@@ -94,3 +94,9 @@ To get started with the notebooks in this repository, follow these steps:
 - **Data Transformation**: Using PySpark and Spark SQL to clean and transform raw data.
 - **Data Analysis**: Conducting various analyses to uncover trends and patterns in the racing data.
 - **Data Visualization**: Creating compelling visualizations using Power BI to present the analysis results.
+
+## Dominant Drivers Dashboard
+![Dominant_Drivers_Dashboard](https://github.com/user-attachments/assets/b0df9c66-7198-4533-9b58-82fd95eb4a52)
+
+## Dominant Teams Dashboard
+![Dominant_Teams_Dashboard](https://github.com/user-attachments/assets/ed3292e7-1c3b-4b93-80a9-bd1878ea7a32)

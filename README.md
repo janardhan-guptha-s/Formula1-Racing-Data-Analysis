@@ -29,6 +29,59 @@ To get started with the notebooks in this repository, follow these steps:
 3. **Run the Notebooks**
    - Open the notebooks in your Databricks workspace.
    - Follow the step-by-step instructions provided in the notebooks.
+ 
+## Setting Up Azure Services
+
+### Azure Data Lake Storage Gen2
+1. **Create a Storage Account**
+   - Sign in to the [Azure portal](https://portal.azure.com/).
+   - In the left-hand menu, select **Storage accounts** and then **Create**.
+   - Select the subscription and resource group.
+   - Enter a name for the storage account.
+   - Select **Review + create** and then **Create**.
+
+2. **Enable Hierarchical Namespace**
+   - After the storage account is created, go to the **Data Lake Storage** section.
+   - Enable **Hierarchical namespace**.
+
+3. **Create a Container**
+   - Navigate to the storage account and select **Containers**.
+   - Click **+ Container** and create a new container for your data.
+
+### Azure Data Factory
+1. **Create a Data Factory**
+   - In the Azure portal, select **Create a resource** and search for **Data Factory**.
+   - Select **Data Factory** and click **Create**.
+   - Choose the subscription, resource group, and region.
+   - Enter a name for the data factory.
+   - Click **Review + create** and then **Create**.
+
+2. **Set Up Linked Services**
+   - In the Data Factory, go to the **Manage** tab and select **Linked services**.
+   - Click **+ New** and choose **Azure Data Lake Storage Gen2**.
+   - Configure the linked service with the storage account details.
+
+3. **Create Pipelines**
+   - In the **Author** tab, create pipelines to ingest and transform data.
+   - Use activities such as **Copy Data** to move data from source to destination.
+
+### Linking Azure Data Lake Storage Gen2 and Azure Data Factory with Databricks
+1. **Generate Access Keys**
+   - In the Azure portal, navigate to your storage account.
+   - Under **Security + networking**, select **Access keys**.
+   - Copy the access keys.
+
+2. **Configure Databricks to Access Storage**
+   - In your Databricks workspace, go to **Clusters** and select your cluster.
+   - Click on **Configuration** and add the following Spark configurations:
+     ```plaintext
+     spark.hadoop.fs.azure.account.key.<storage-account-name>.dfs.core.windows.net <storage-account-key>
+     ```
+
+3. **Use Data Factory to Trigger Databricks Notebooks**
+   - In the Data Factory pipeline, add a **Databricks Notebook** activity.
+   - Configure it to run specific notebooks in your Databricks workspace.
+
 
 ## The Process
 1. **Data Ingestion**: Data is ingested from the Ergast API, which provides a rich dataset on Formula 1 races, drivers, circuits, and more. This data is stored in Azure Data Lake Storage Gen2.
@@ -41,6 +94,3 @@ To get started with the notebooks in this repository, follow these steps:
 - **Data Transformation**: Using PySpark and Spark SQL to clean and transform raw data.
 - **Data Analysis**: Conducting various analyses to uncover trends and patterns in the racing data.
 - **Data Visualization**: Creating compelling visualizations using Power BI to present the analysis results.
-
-
-
